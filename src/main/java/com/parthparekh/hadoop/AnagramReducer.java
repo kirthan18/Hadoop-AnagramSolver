@@ -12,7 +12,7 @@ import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
 
 /**
- * This reducer class will collect all the valid anagrams from mapper and writes them to a file
+ * This reducer class will collect all the valid anagrams from all the mappers and writes them to a file
  *
  * @author: Parth Parekh
  */
