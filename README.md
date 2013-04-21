@@ -12,7 +12,7 @@ Simple hadoop example to solve single word anagrams
 (above command builds the 1.0-SNAPSHOT jar)
 
 # prerequisites
-Assume you have hadoop installed on your machine. Follow <a href='http://ragrawal.wordpress.com/2012/04/28/installing-hadoop-on-mac-osx-lion/'>this</a> guide if you%27re developing on MAC
+Assume you have hadoop installed on your machine. Follow <a href='http://ragrawal.wordpress.com/2012/04/28/installing-hadoop-on-mac-osx-lion/'>this</a> guide if you're developing on Mac
 
 # useful commands
 
@@ -53,7 +53,7 @@ upload the wordlist <a href='https://github.com/parekhparth/Hadoop-AnagramSolver
     hadoop fs -mkdir Hadoop-AnagramSolver
     hadoop fs -copyFromLocal wordlist.txt Hadoop-AnagramSolver/
 
-Run Hadoop MapReduce to find anagrams for %27listen%27
+Run Hadoop MapReduce to find anagrams for 'listen'
 
     hadoop jar target/Hadoop-AnagramSolver-1.0-SNAPSHOT.jar com.parthparekh.hadoop.AnagramSolverJob 4 Hadoop-AnagramSolver/wordlist.txt Hadoop-AnagramSolver/output listen
 
