@@ -27,16 +27,16 @@ public class AnagramReducer extends MapReduceBase implements Reducer<Text, Text,
 	public void reduce(Text anagramKey, Iterator<Text> anagramValues,
 			OutputCollector<Text, Text> results, Reporter reporter) throws IOException {
 		assert conf.get("sortedAnagramWord").equals(anagramKey.toString());
-		String output = "";
+		String anagrams = "";
 		while(anagramValues.hasNext()) {
 			Text anagam = anagramValues.next();
-			output = output + anagam.toString() + "\n";
+			anagrams = anagrams + anagam.toString() + "\n";
 		}
 		Text reducerOutputKey = new Text();
 		Text reducerOutputValue = new Text();
 		reducerOutputKey.set(conf.get("sortedAnagramWord"));
-		reducerOutputValue.set(output);
+		reducerOutputValue.set(anagrams);
 		results.collect(reducerOutputKey, reducerOutputValue);
-		logger.info("Anagrams for word: " + conf.get("sortedAnagramWord") + " are: " + output);
+		logger.info("Anagrams for word: " + conf.get("sortedAnagramWord") + " are: " + anagrams);
 	}	
 }
