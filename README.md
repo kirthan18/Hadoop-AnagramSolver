@@ -22,10 +22,10 @@ after you build the jar, you can find the anagrams using following command:
 Usage:
 
     hadoop -jar <Hadoop-AnagramSolver.jar> com.parthparekh.hadoop.AnagramSolverJob <numberOfMaps> <wordlistFilePath> <outputFilePath> <anagramWord>
-    numberOfMaps - number of map jobs you want to run
-    wordlistFilePath - Hadoop FS path for the wordlist file (you%27 have to upload the wordlist file to Hadoop FS before this)
-    outputFilePath - Hadoop FS path for output directory
-    anagramWord - word for which you want to find anagrams
+      numberOfMaps - number of map jobs you want to run
+      wordlistFilePath - Hadoop FS path for the wordlist file (you%27 have to upload the wordlist file to Hadoop FS before this)
+      outputFilePath - Hadoop FS path for output directory
+      anagramWord - word for which you want to find anagrams
 
 ## useful commands
 
