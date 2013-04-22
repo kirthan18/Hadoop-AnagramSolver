@@ -12,9 +12,22 @@ Simple hadoop example to solve single word anagrams
 (above command builds the 1.0-SNAPSHOT jar)
 
 # prerequisites
-Assume you have hadoop installed on your machine. Follow <a href='http://ragrawal.wordpress.com/2012/04/28/installing-hadoop-on-mac-osx-lion/'>this</a> guide if you're developing on Mac
+* you have hadoop installed (Follow <a href='http://ragrawal.wordpress.com/2012/04/28/installing-hadoop-on-mac-osx-lion/'>this</a> guide if you're developing on Mac)
+* you have latest Java (1.5+) installed
+* you have Maven installed
 
-# useful commands
+# Execute
+after you build the jar, you can find the anagrams using following command:
+
+Usage:
+
+    hadoop -jar <Hadoop-AnagramSolver.jar> com.parthparekh.hadoop.AnagramSolverJob <numberOfMaps> <wordlistFilePath> <outputFilePath> <anagramWord>
+    numberOfMaps - number of map jobs you want to run
+    wordlistFilePath - Hadoop FS path for the wordlist file (you%27 have to upload the wordlist file to Hadoop FS before this)
+    outputFilePath - Hadoop FS path for output directory
+    anagramWord - word for which you want to find anagrams
+
+## useful commands
 
 Create directory in Hadoop FS
 
@@ -36,24 +49,13 @@ Put files into Hadoop FS
 
     hadoop fs -put testwordlist Hadoop-AnagramSolver/
 
-# Execute
-after you build the jar, you can find the anagrams using following command:
-
-Usage:
-
-    hadoop -jar <Hadoop-AnagramSolver.jar> com.parthparekh.hadoop.AnagramSolverJob <numberOfMaps> <wordlistFilePath> <outputFilePath> <anagramWord>
-    numberOfMaps - number of map jobs you want to run
-    wordlistFilePath - Hadoop FS path for the wordlist file (you%27 have to upload the wordlist file to Hadoop FS before this)
-    outputFilePath - Hadoop FS path for output directory
-    anagramWord - word for which you want to find anagrams
-
 ## Example
 
 upload the wordlist <a href='https://github.com/parekhparth/Hadoop-AnagramSolver/blob/master/wordlist/wordlist.txt'>file</a> to Hadoop FS using following command:
     hadoop fs -mkdir Hadoop-AnagramSolver
     hadoop fs -copyFromLocal wordlist.txt Hadoop-AnagramSolver/
 
-Run Hadoop MapReduce to find anagrams for 'listen'
+Below command will execute Hadoop MapReduce AnagramSolverJob to find anagrams for 'listen'
 
     hadoop jar target/Hadoop-AnagramSolver-1.0-SNAPSHOT.jar com.parthparekh.hadoop.AnagramSolverJob 4 Hadoop-AnagramSolver/wordlist.txt Hadoop-AnagramSolver/output listen
 
@@ -107,8 +109,7 @@ Run Hadoop MapReduce to find anagrams for 'listen'
     tinsel
     enlist
     inlets
-    listen
-	
+    listen	
 
 # LICENSE
 
