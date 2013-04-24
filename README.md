@@ -103,7 +103,8 @@ Below command will execute Hadoop MapReduce AnagramSolverJob to find anagrams fo
     13/04/21 14:57:10 INFO mapred.JobClient:     Combine output records=0
     13/04/21 14:57:10 INFO mapred.JobClient:     Reduce output records=1
     13/04/21 14:57:10 INFO mapred.JobClient:     Map output records=5
-    Single word anagrams for: listen are: 
+    
+    Single word anagrams for 'listen' are: 
     eilnst
     silent
     tinsel
