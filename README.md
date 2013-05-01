@@ -12,9 +12,9 @@ Simple hadoop example to solve single word anagrams
 (above command builds the 1.0-SNAPSHOT jar)
 
 # prerequisites
-* you have hadoop installed (Follow <a href='http://ragrawal.wordpress.com/2012/04/28/installing-hadoop-on-mac-osx-lion/'>this</a> guide if you're developing on Mac)
-* you have latest Java (1.5+) installed
-* you have Maven installed
+* you should have hadoop installed (Follow <a href='http://ragrawal.wordpress.com/2012/04/28/installing-hadoop-on-mac-osx-lion/'>this</a> guide if you're developing on Mac)
+* you should have latest Java (1.5+) installed
+* you should have Maven installed
 
 # Execute
 after you build the jar, you can find the anagrams using following command:
